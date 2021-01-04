@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CalorieCalculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png"
+          href="https://user-images.githubusercontent.com/34577873/43033510-24d8f684-8cd4-11e8-9b07-d22248354f59.png">
+</head>
+<body class="index-page">
+
+<nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">CC</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li sec:authorize="isAuthenticated()" ><a href="/user/full-statistics">Full Statistics</a></li>
+            <li sec:authorize="isAuthenticated()"><a  href="/user/logout">Logout</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/user/login">Login</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/user/register">Register</a></li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <h1 class="error_title">An error occurred while processing your request!</h1>
+    <!--/*@thymesVar id="message" type="message"*/-->
+    <p class="message" th:text="|Oooops: Error: ${message}|"></p>
+</main>
+
+</body>
+</html>

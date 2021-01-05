@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CalorieCalculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png"
+          href="https://user-images.githubusercontent.com/34577873/43033510-24d8f684-8cd4-11e8-9b07-d22248354f59.png">
+</head>
+<body class="index-page">
+
+<nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">CC</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" th:object="${username}">
+            <li><a th:href="@{/calculator/calculate/(username=${username})}">Calculator</a></li>
+            <li><a th:href="@{/day/add/(username=${username})}">Add day</a></li>
+            <li><a href="/user/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div>
+        <div class="main-picture-and-name" th:object="${user}">
+            <div class="profile-pic">
+                <img th:src="*{photoUrl}" alt="Nature" class="responsive">
+            </div>
+            <div class="profile-name">
+                <p class="username-style" th:text="*{username}"></p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="days-list">
+        <ul class="days" th:each="d:${dayList}" th:object="${d}" >
+            <li><a th:href="@{/day/view-day/(id=*{id})}" th:text="*{name}" class="name-day"></a></li>
+            <li th:text="*{date}" class="date"></li>
+            <li class="total-calories">Total calories:</li>
+            <li class="total-calories" th:text= "| *{totalCalories} cal|"></li>
+        </ul>
+
+    </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CalorieCalculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png"
+          href="https://user-images.githubusercontent.com/34577873/43033510-24d8f684-8cd4-11e8-9b07-d22248354f59.png">
+</head>
+<body class="index-page">
+
+<nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">CC</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/user/full-statistics">Full Statistics</a></li>
+            <li><a th:href="@{/meal/view-meal/(id=${id})}">View Meal</a></li>
+            <li><a href="/user/logout">Logout</a></li>
+
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="add-day-box" th:object="${id}">
+        <h1>Search for ingredient</h1>
+        <form th:object="${searchIngredientBindingModel}" th:action="@{/ingredient/search/(id=${id})}" method="POST">
+            <div>
+                <p>Name of the ingredient</p>
+                <input th:field="*{name}" th:errorclass="bg-danger" type="text" name="name" placeholder="Enter name">
+                <small th:each = "e : ${#fields.errors('name')}" th:text = "${e}" class="text-danger"></small>
+            </div>
+            <div>
+                <p>Grams</p>
+                <input th:field="*{grams}" th:errorclass="bg-danger" type="number" name="grams" placeholder="Enter grams">
+                <small th:each = "e : ${#fields.errors('grams')}" th:text = "${e}" class="text-danger"></small>
+            </div>
+
+            <input type="submit" name="submit" value="Search">
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
+</body>
+</html>

@@ -1,3 +1,19 @@
+# calorie-calculator
+A project to calculate the daily calories
+
+List of functionalities
+1. Register
+2. Login
+3. Logout
+4. In user's profile there is a list of all days with the number of calories
+5. The user can add a day
+6. The user can add a meal
+7. The user can add a dish in that meal
+8.The user can add an ingredient with its calories or search it in the database
+9. The application calculate calories for the dish, then for the meal and in the end for the day.
+10. If the user add more meals and dishes for the day, the calories are recalculated
+
+
 ![Екранна снимка (179)](https://user-images.githubusercontent.com/69259691/118266118-d7140280-b4c2-11eb-9559-d8bab1d51e9b.png)
 ![Екранна снимка (180)](https://user-images.githubusercontent.com/69259691/118266122-d8452f80-b4c2-11eb-8d4e-15014fdd83cc.png)
 ![Екранна снимка (181)](https://user-images.githubusercontent.com/69259691/118266124-d8452f80-b4c2-11eb-99e1-7f23eb81a2f1.png)
@@ -16,17 +32,4 @@
 ![Екранна снимка (201) (1)](https://user-images.githubusercontent.com/69259691/118266153-dd09e380-b4c2-11eb-861a-9a0500eea9ff.png)
 ![Екранна снимка (202)](https://user-images.githubusercontent.com/69259691/118266154-dda27a00-b4c2-11eb-92d4-c596a5620b79.png)
 ![Екранна снимка (203)](https://user-images.githubusercontent.com/69259691/118266157-ded3a700-b4c2-11eb-8801-e9fc98a18d97.png)
-# calorie-calculator
-A project to calculate the daily calories
 
-List of functionalities
-1. Register
-2. Login
-3. Logout
-4. In user's profile there is a list of all days with the number of calories
-5. The user can add a day
-6. The user can add a meal
-7. The user can add a dish in that meal
-8.The user can add an ingredient with its calories or search it in the database
-9. The application calculate calories for the dish, then for the meal and in the end for the day.
-10. If the user add more meals and dishes for the day, the calories are recalculated
